@@ -35,9 +35,15 @@ body {
     gap: 1px;
     grid-template-areas: 
     "header header header header"
-    "display display display display"
-    "clearEntry clear delete divide";
+    "display display display display";
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: 20px minmax(120px, auto) repeat(5, minmax(0, 70px));
 }
 
+.header {
+    grid-area: header;
+}
+
+.display {
+    grid-area: display;
+}
