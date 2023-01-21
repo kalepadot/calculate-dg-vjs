@@ -36,6 +36,11 @@ const initApp = () => {
   deleteButton.addEventListener("click", () => {
     currentValueElem.value = currentValueElem.value.slice(0, -1);
   });
+
+  const signChangeButton = document.querySelector(".signChange");
+  signChangeButton.addEventListener("click", () => {
+    currentValueElem.value = parseFloat(currentValueElem.value) * -1;
+  });
 };
 
 document.addEventListener("DOMContentLoaded", initApp);
