@@ -20,7 +20,7 @@ body {
     background: linear-gradient(
         90deg,
         rgba(255,255, 255, 1) 0%,
-        rgba(70, 130, 100, 1) 0%,
+        rgba(70, 130, 180, 1) 0%,
         rgba(238 ,238, 238,1) 50%,
         rgba(255,165, 0,1)100%);
         display: grid;
@@ -40,10 +40,22 @@ body {
     grid-template-rows: 20px minmax(120px, auto) repeat(5, minmax(0, 70px));
 }
 
-.header {
-    grid-area: header;
+.container:focus-within {
+    background-color: rgba(225, 225, 225, 0.5);
 }
 
+.header {
+    grid-area: header;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.header > h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: normal;
+}
 .display {
     grid-area: display;
 }
