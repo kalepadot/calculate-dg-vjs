@@ -83,7 +83,28 @@ const initApp = () => {
         num2: lastEquation.num2,
         op: lastEquation.op,
       };
+    } else if (!itemArray.length) {
+      return currentVal;
+    } else {
+      itemArray.push(currentVal);
+      equationObj = {
+        num1: parseFloat(itemArray[0]),
+        num2: parseFloat(currentVal),
+        op: itemArray[1],
+      };
     }
+
+    equationArray.push(equationObj);
+
+    const equationString = `${equationObj["num1"]} ${equationObj["op"]} ${equationObj["num2"]}`;
+
+    calculate(equationString, currentValueElem);
+
+    previousValueElem.textContent = `${equationString} =`;
+
+    newNumberFlag = true;
+    itemArray = [];
+    console.log(equationArray);
   });
 
   const clearButtons = document.querySelectorAll(".clear, .clearEntry");
