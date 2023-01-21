@@ -84,5 +84,36 @@ body {
 }
 
 button {
-    
+    display: grid;
+    place-content: center;
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+}
+
+button:hover,
+button:active {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.function {
+    background-color: rgb(235,235,235);
+
+}
+
+.transparentcy {
+    background-color: rgba(255,255,255, 0.6);
+}
+
+.equals {
+    background-color: rgb(108,177,233);
+}
+
+.equals:hover,
+.equals:active {
+    background-color: steelblue;
+    filter: brightness(120%)
 }
