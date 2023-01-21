@@ -43,6 +43,24 @@ const initApp = () => {
         ${newOperator}`;
         return (newNumberFlag = true);
       }
+
+      //complete an equation
+      if (itemArray.length) {
+        itemArray.push(currentVal); //3rd element
+
+        const equationObj = {
+          num1: parseFloat(itemArray[0]),
+          num2: parseFloat(currentVal),
+          op: itemArray[1],
+        };
+
+        equationArray.push(equationObj);
+        const equationString = `${equationObj["num1"]}
+        ${equationObj["op"]}
+        ${equationObj["num2"]}`;
+
+        const newValue = calculate(equationString, currentValueElem);
+      }
     });
   });
 
@@ -69,3 +87,10 @@ const initApp = () => {
 };
 
 document.addEventListener("DOMContentLoaded", initApp);
+
+const calculate = (equation, currentValueElem) => {
+  const regex = /(^[*/=])|(\s)/g;
+  equation.replace(regex, "");
+  const divByZero = /(\/0)/.test(equation);
+  if (divByZero) return (currentValueElem.value = 0);
+};
