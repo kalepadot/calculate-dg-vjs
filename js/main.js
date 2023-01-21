@@ -21,6 +21,31 @@ const initApp = () => {
     });
   });
 
+  const opButtons = document.querySelectorAll(".operator");
+  opButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      //equal sign showing
+      if (newNumberFlag) {
+        previousValueElem.textContent = "";
+        itemArray = [];
+      }
+
+      const newOperator = event.target.textContent;
+      const currentVal = currentValueElem.value;
+
+      //need number first
+      if (!itemArray.length && currentVal == 0) return;
+
+      //begin new equation
+      if (!itemArray.length) {
+        itemArray.push(currentVal, newOperator);
+        previousValueElem.textContent = `${currentVal}
+        ${newOperator}`;
+        return (newNumberFlag = true);
+      }
+    });
+  });
+
   const clearButtons = document.querySelectorAll(".clear, .clearEntry");
   clearButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
