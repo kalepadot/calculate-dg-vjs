@@ -1,6 +1,6 @@
 const initApp = () => {
-  const currentValueElem = document.querySelector(".currentValue");
-  const previousValueElem = document.querySelector(".previousValue");
+  const currentValueElem = document.querySelector(".currentvalue");
+  const previousValueElem = document.querySelector(".previousvalue");
   let itemArray = [];
   const equationArray = [];
   let newNumberFlag = false;
@@ -19,6 +19,22 @@ const initApp = () => {
             : `${currentValueElem.value}${newInput}`;
       }
     });
+  });
+
+  const clearButtons = document.querySelectorAll(".clear, .clearEntry");
+  clearButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      currentValueElem.value = 0;
+      if (event.target.classList.contains("clear")) {
+        previousValueElem.textContent = "";
+        itemArray = [];
+      }
+    });
+  });
+
+  const deleteButton = document.querySelector(".delete");
+  deleteButton.addEventListener("click", () => {
+    currentValueElem.value = currentValueElem.value.slice(0, -1);
   });
 };
 
