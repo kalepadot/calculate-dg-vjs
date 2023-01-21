@@ -31,6 +31,11 @@ const initApp = () => {
       }
     });
   });
+
+  const deleteButton = document.querySelector(".delete");
+  deleteButton.addEventListener("click", () => {
+    currentValueElem.value = currentValueElem.value.slice(0, -1);
+  });
 };
 
 document.addEventListener("DOMContentLoaded", initApp);
