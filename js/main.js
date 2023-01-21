@@ -76,6 +76,14 @@ const initApp = () => {
     const currentVal = currentValueElem.value;
     let equationObj;
     //pressing equals repeatedly
+    if (!itemArray.length && equationArray.length) {
+      const lastEquation = equationArray[equationArray.length - 1];
+      equationObj = {
+        num1: parseFloat(currentVal),
+        num2: lastEquation.num2,
+        op: lastEquation.op,
+      };
+    }
   });
 
   const clearButtons = document.querySelectorAll(".clear, .clearEntry");
