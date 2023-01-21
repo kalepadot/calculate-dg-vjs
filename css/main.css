@@ -56,6 +56,33 @@ body {
     font-size: 0.85rem;
     font-weight: normal;
 }
+
 .display {
     grid-area: display;
+    padding: 3px 5px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 0.25rem;
+}
+
+.previousvalue {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.currentvalue {
+    font-size: 3rem;
+    font-weight: bolder;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    font-family: 'Roboto Mono', monospace;
+}
+
+button {
+    
 }
