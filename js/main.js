@@ -93,4 +93,5 @@ const calculate = (equation, currentValueElem) => {
   equation.replace(regex, "");
   const divByZero = /(\/0)/.test(equation);
   if (divByZero) return (currentValueElem.value = 0);
+  return (currentValueElem.value = eval(equation));
 };
