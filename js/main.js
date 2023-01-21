@@ -71,6 +71,13 @@ const initApp = () => {
     });
   });
 
+  const equalsButton = document.querySelector(".equals");
+  equalsButton.addEventListener("click", () => {
+    const currentVal = currentValueElem.value;
+    let equationObj;
+    //pressing equals repeatedly
+  });
+
   const clearButtons = document.querySelectorAll(".clear, .clearEntry");
   clearButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
